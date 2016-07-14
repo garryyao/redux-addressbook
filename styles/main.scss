@@ -1,0 +1,177 @@
+$card-font-size: 12px !default;
+$card-title-font-size: 16px !default;
+$card-subtitle-font-size: 10px !default;
+$list-item-font-size: 12px !default;
+
+$input-text-font-size: 12px !default;
+$input-text-font-size-lg: 20px !default;
+$input-text-width: 100% !default;
+$input-text-padding: 2px !default;
+$input-text-vertical-spacing: 5px !default;
+
+$input-text-button-size: 20px !default;
+$input-text-floating-label-fontsize: 12px !default;
+$input-text-expandable-icon-top: 16px !default;
+
+@import "~material-design-lite/src/material-design-lite";
+
+$border-line-color: $button-focus-color;
+$locmark-bg-color: unquote("rgba(#{"244, 89, 81"}, .8)");
+
+.centered-block {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* possibly larger button icon size */
+.mdl-button--icon .material-icons {
+	transform: translate(-50%, -50%);
+	width: auto;
+}
+
+.mdl-card__menu .mdl-button--icon {
+	margin-right: 4px;
+}
+
+.mdl-card__menu .mdl-button--icon .material-icons {
+	font-size: 32px;
+}
+
+.mdl-card-address-list {
+	min-height: initial;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+.mdl-card__title {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	padding: 10px;
+}
+
+.mdl-card__menu {
+	top: 2px;
+	right: 5px;
+}
+
+.mdl-list {
+	margin: 0;
+}
+
+.mdl-list__item:not(.mdl-list__item--empty) {
+	font-size: $list-item-font-size;
+	padding: 0 10px;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba(0, 0, 0, .1);
+	}
+
+	&:hover {
+		background-color: $button-active-color;
+
+		.mdl-list__item-primary-content {
+			cursor: pointer;
+		}
+	}
+
+	&--editing {
+		background-color: $default-item-hover-bg-color;
+	}
+}
+
+.mdl-list__item--empty {
+	font-weight: 200;
+}
+
+.mdl-list__item-avatar.material-icons {
+	width: 24px;
+	height: 24px;
+	font-size: 16px;
+	background-color: $locmark-bg-color;
+	padding: 4px;
+}
+
+.mdl-card__actions {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+}
+
+.mdl-address-app {
+	height: 100%;
+}
+
+.mdl-address-list {
+	position: absolute;
+	top: 60px;
+	left: 10px;
+}
+
+.mdl-textfield__input--lg {
+	font-size: $input-text-font-size-lg;
+}
+
+.mdl-dialog-address {
+	min-width: 450px;
+	padding: 0 1em;
+	display: block;
+	background-color: white;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: auto;
+	right: -15px;
+	box-shadow: none;
+	border-left: 1px solid $border-line-color;
+
+	/* transition for the dialog */
+	transition: transform, opacity;
+	transition-duration: .6s;
+	transform: translateX(0);
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+	/* animate initial values*/
+	opacity: 0;
+	transform: translateX(50%);
+
+	&:before {
+		right: 100%;
+		top: 36px;
+		transform: rotate(-45deg) translateX(50%);
+		background-color: white;
+		width: 10px;
+		height: 10px;
+		border: 1px solid $border-line-color;
+		border-right-width: 0;
+		border-bottom-width: 0;
+		content: " ";
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&.mdl-dialog-opened {
+		opacity: 1;
+		transform: translateX(100%);
+	}
+}
+
+.mdl-dialog-overlay {
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+}
+
+.mdl-map {
+	width: 100%;
+	height: calc(100% - 1px);
+}
+
+.mdl-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	top: calc(50% - 14px);
+	left: calc(50% - 14px);
+}

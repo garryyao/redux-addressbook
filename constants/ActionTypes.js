@@ -1,0 +1,7 @@
+export const ADD_ADDR = 'ADD_TODO'
+export const DELETE_ADDR = 'DELETE_TODO'
+export const EDIT_ADDR = 'EDIT_TODO'
+export const FETCH_ADDRS = 'FETCH_ADDRS'
+export const RECEIVE_ADDRS = 'RECEIVE_ADDRS'
+export const UPDATE_ADDRS = 'UPDATE_ADDRS'
+export const NOTIFY_USER= 'NOTIFY_SUCCESS'
